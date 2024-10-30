@@ -1,0 +1,336 @@
+.cabinet
+  display: grid
+  grid-template-columns: 300px 1fr 3fr
+  grid-template-areas: 'cabinet_skin_wrapper cabinet_nav cabinet_balance'
+  grid-gap: 12px
+  margin: 0 0 12px 0
+  .cabinet_skin_wrapper
+    display: grid
+    grid-gap: 12px
+    align-items: center
+    grid-area: cabinet_skin_wrapper
+    & .cabinet_skin_image
+      width: 100%
+      height: 400px
+      & canvas
+        width: 100%
+        height: 100%
+        object-fit: cover
+    & a
+      text-align: center
+    .cabinet_image
+      width: 224px
+      height: 224px
+      object-fit: cover
+      overflow: hidden
+      border-radius: 50%
+    .cabinet_skin
+      & h3
+        font-size: 20px
+        text-transform: uppercase
+        letter-spacing: 1px
+  .cabinet_balance
+    display: grid
+    grid-area: cabinet_balance
+    & .cost
+      cursor: pointer
+  .cabinet_nav
+    display: grid
+    grid-gap: 16px
+    align-items: flex-start
+    align-content: flex-start
+    grid-area: cabinet_nav
+    & a
+      text-align: center
+    & .cabinet_download
+      label
+        width: 100%
+        text-align: center
+      input
+        display: none
+.standart_list
+  &.cabinet_status .el
+    & .el_string
+      & .name
+        flex: 1 1 50%
+        text-transform: uppercase
+        letter-spacing: 1px
+      & .cost
+        flex: 1 1 50%
+        background: #344a5f
+        padding: 2px
+        border-radius: 2px
+        text-align: center
+        white-space: nowrap
+      & .control
+        flex: 1 1 50%
+        background: #344a5f
+        padding: 2px 2px 2px 12px
+        border-radius: 2px
+        text-align: center
+        white-space: nowrap
+        justify-content: space-between
+        align-items: center
+        font-size: 18px
+        & .icon
+          width: 20px
+          height: 20px
+          cursor: pointer
+.standart_list
+  &.history .el
+    & .el_string
+      & .date
+        flex: 0 0 160px
+      & .name, & .server
+        flex: 1 1 50%
+      & .cost, & .count, & .cost, & .all_cost
+        flex: 0 0 130px
+        background: #344a5f
+        padding: 2px
+        border-radius: 2px
+        text-align: center
+        white-space: nowrap
+@media screen and (max-width: 1460px)
+  .cabinet
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-areas: 'cabinet_skin_wrapper cabinet_nav' 'cabinet_balance cabinet_balance'
+    grid-gap: 12px
+    margin: 0 0 12px 0
+@media screen and (max-width: 1200px)
+  .standart_list
+    &.history .el
+      & .el_string
+        flex-wrap: wrap
+        & .date
+          flex: 0 0 20%
+        & .name
+          flex: 0 0 40%
+        & .server
+          flex: 1 1 auto
+          text-align: right
+        & .count, & .cost
+          flex: 0 0 30%
+        & .all_cost
+          flex: 1 1 auto
+@media screen and (max-width: 980px)
+  .standart_list
+    &.cabinet_status .el
+      & .el_string
+        flex-wrap: wrap
+        & .name
+          flex: 0 0 100%
+        & .cost
+          flex: 0 0 calc(50% - 6px)
+        & .control
+          flex: 0 0 calc(50% - 6px)
+@media screen and (max-width: 580px)
+  .cabinet
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-areas: 'cabinet_skin_wrapper' 'cabinet_nav' 'cabinet_balance'
+    grid-gap: 12px
+    margin: 0 0 12px 0
+  .standart_list
+    &.cabinet_status .el
+      & .el_string
+        & .cost
+          flex: 0 0 100%
+        & .control
+          flex: 0 0 100%
+  .standart_list
+    &.history .el
+      & .el_string
+        flex-wrap: wrap
+        & .date
+          flex: 0 0 100%
+          text-align: center
+        & .name
+          flex: 0 0 100%
+          text-align: center
+        & .server
+          flex: 0 0 100%
+          text-align: center
+        & .count, & .cost
+          flex: 0 0 calc(50% - 6px)
+        & .all_cost
+          flex: 0 0 100%
+// Privileges style
+.standart_list
+  &.privileges .el
+    & .el_string
+      & .name
+        flex: 0 0 300px
+        text-transform: uppercase
+      & .descript
+        flex: 1 1 100%
+      & .cost, & .sale, & .exist
+        flex: 0 0 80px
+        background: #344a5f
+        padding: 2px
+        border-radius: 2px
+        text-align: center
+      & .exist
+        flex: 0 0 140px
+    & .el_info
+      & div
+        flex: 1 1 auto
+        background: #344a5f
+        padding: 2px
+        border-radius: 2px
+@media screen and (max-width: 1024px)
+  .standart_list
+    &.privileges .el
+      & .el_string
+        flex-wrap: wrap
+        justify-content: space-between
+        & .name
+          flex: 0 0 100%
+          & .descript
+            flex: 0 0 100%
+          & .cost, & .sale
+            flex: 0 0 80px
+            background: #344a5f
+            padding: 2px
+            border-radius: 2px
+            text-align: center
+// Rents style
+.standart_list
+  &.shop .standart_list_columns
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-gap: 12px
+  &.rents .el,
+  &.shop .el
+    overflow: hidden
+    position: relative
+    & .el_string
+      display: grid
+      position: relative
+      & .name
+        word-wrap: break-word
+      &>img
+        width: 60%
+        margin: 12px 20%
+      & .cost
+        background: #344a5f
+        padding: 2px
+        border-radius: 2px
+        text-align: center
+      & .sale
+        position: absolute
+        top: 52px
+        left: 8px
+        background: #344a5f
+        padding: 2px 6px
+        border-radius: 2px
+        text-align: center
+      & .control
+        position: absolute
+        top: 6px
+        right: 6px
+    & .el_info
+      display: none
+      position: absolute
+      top: 1px
+      right: 1px
+      left: 1px
+      bottom: 0
+      background: #344a5f
+      padding: 8px
+      animation: fadeIn
+      animation-duration: 0.4s
+      border-bottom: 28px solid #181f27
+    &:hover .el_info
+      display: block
+      & .el_basket
+        position: absolute
+        right: 4px
+        bottom: -24px
+        max-width: 20px
+        width: 100%
+        cursor: pointer
+        padding: 0
+        &>img
+          width: 100%
+@media screen and (max-width: 1600px)
+  .standart_list
+    &.shop .standart_list_columns
+      grid-template-columns: repeat(6, 1fr)
+@media screen and (max-width: 1300px)
+  .standart_list
+    &.shop .standart_list_columns
+      grid-template-columns: repeat(4, 1fr)
+@media screen and (max-width: 1000px)
+  .standart_list
+    &.shop .standart_list_columns
+      grid-template-columns: repeat(3, 1fr)
+@media screen and (max-width: 500px)
+  .standart_list
+    &.shop .standart_list_columns
+      grid-template-columns: repeat(2, 1fr)
+// Rents control
+.standart_list
+  &.rentsControl .standart_list_columns
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 12px
+    & .el
+      & .el_string
+        display: grid
+        grid-template-columns: 40px 200px auto 200px
+
+
+// Payment
+.payment
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 16px
+  height: calc(100vh - 180px)
+  align-items: center
+  text-align: center
+.payment_descript
+  & .payment_descript_info
+    font-weight: 300
+    font-size: 32px
+    letter-spacing: 3px
+    margin: 0 0 12px 0
+    text-transform: uppercase
+  & p
+    font-size: 18px
+  & .payment_img
+    width: 180px
+    height: 100%
+    margin: 24px auto
+    & img
+      object-fit: cover
+@media screen and (max-width: 500px)
+  .payment_descript
+    & .payment_descript_info
+      font-size: 24px
+    & p
+      font-size: 12px
+    & .payment_img
+      width: 120px
+      height: 100%
+      margin: 24px auto
+.prefix_control_wrapper
+  &.unvalib
+    opacity: 0.2
+    pointer-events: none
+  .prefix_control
+    display: grid
+    grid-template-columns: 180px 200px auto
+    & .colors
+      display: flex
+      align-items: center
+      & .el
+        width: 22px
+        height: 22px
+        border: 4px solid #181f27
+        margin: 2px
+        cursor: pointer
+    & .preview
+      display: flex
+      justify-content: center
+      align-items: center

@@ -1,0 +1,185 @@
+// Регистрация
+.profile
+  display: grid
+  grid-template-columns: 1.2fr 1fr
+  grid-gap: 16px
+  min-height: 80vh
+  .profile_info_wrapper
+    display: grid
+    grid-template-columns: 224px auto
+    grid-gap: 16px
+    align-items: center
+    .profile_image
+      width: 224px
+      height: 224px
+      object-fit: cover
+      overflow: hidden
+      border-radius: 50%
+    .profile_info
+      display: grid
+      grid-gap: 4px
+      & h3
+        font-size: 20px
+        text-transform: uppercase
+        letter-spacing: 1px
+      & p
+        display: grid
+        grid-template-columns: 1fr 1.6fr
+  .profile_change
+    display: grid
+    align-content: center
+.standart_list
+  &.history .el
+    & .el_string
+      & .date
+        flex: 0 0 160px
+      & .name, & .server
+        flex: 1 1 50%
+      & .cost, & .count, & .cost, & .all_cost
+        flex: 0 0 130px
+        background: #344a5f
+        padding: 2px
+        border-radius: 2px
+        text-align: center
+        white-space: nowrap
+.auth
+  display: grid
+  grid-template-columns: 1.2fr 2fr
+  align-items: center
+  justify-content: center
+  min-height: 80vh
+  max-width: 680px
+  margin: 0 auto
+  position: relative
+  &.regist
+    grid-template-columns: 1fr 1fr
+    max-width: 900px
+  & .regist_bg
+    & img
+      width: 100%
+      display: block
+  & .back
+    position: absolute
+    top: 10vh
+    right: 0
+    font-size: 12px
+    letter-spacing: 2px
+    text-decoration: none
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    &::before
+      width: 16px
+      height: 16px
+      content: ''
+      margin: 0 6px 0 0
+      background: url('@/static/icons/chevron-thin-down.svg') center/cover
+      transform: rotate(90deg)
+  & .auth_info
+    text-transform: uppercase
+    border-right: 2px solid #fff
+    padding: 12px 0
+    &.clear
+      border-right: 0 solid #fff
+    & h3
+      letter-spacing: 1px
+      margin: 0 0 12px 0
+      font-size: 18px
+      font-weight: 500
+    & p
+      font-size: 13px
+  & .auth_form
+    & .recovery
+      text-decoration: none
+      text-align: center
+    & h3
+      font-size: 18px
+      text-align: center
+      text-transform: uppercase
+      letter-spacing: 2px
+.profile
+  display: grid
+  grid-template-columns: 1.2fr 1fr
+  grid-gap: 16px
+  min-height: 80vh
+  .profile_info_wrapper
+    display: grid
+    grid-template-columns: 224px auto
+    grid-gap: 16px
+    align-items: center
+    .profile_image
+      width: 224px
+      height: 224px
+      object-fit: cover
+      overflow: hidden
+      border-radius: 50%
+    .profile_info
+      display: grid
+      grid-gap: 4px
+      & h3
+        font-size: 20px
+        text-transform: uppercase
+        letter-spacing: 1px
+      & p
+        display: grid
+        grid-template-columns: 1fr 1.6fr
+  .profile_change
+    display: grid
+    align-content: center
+.standart_list
+  &.history .el
+    & .el_string
+      & .date
+        flex: 0 0 160px
+      & .name, & .server
+        flex: 1 1 50%
+      & .cost, & .count, & .cost, & .all_cost
+        flex: 0 0 130px
+        background: #344a5f
+        padding: 2px
+        border-radius: 2px
+        text-align: center
+        white-space: nowrap
+@media screen and (max-width: 1200px)
+  .profile
+    grid-template-columns: 1fr
+  .standart_list
+    &.history .el
+      & .el_string
+        flex-wrap: wrap
+        & .date
+          flex: 0 0 20%
+        & .name
+          flex: 0 0 40%
+        & .server
+          flex: 1 1 auto
+          text-align: right
+        & .count, & .cost
+          flex: 0 0 30%
+        & .all_cost
+          flex: 1 1 auto
+@media screen and (max-width: 590px)
+  .profile
+    .profile_info_wrapper
+      grid-template-columns: 1fr
+      .profile_image
+        width: 224px
+        height: 224px
+        margin: 0 auto
+  .standart_list
+    &.history .el
+      & .el_string
+        flex-wrap: wrap
+        & .date
+          flex: 0 0 100%
+          text-align: center
+        & .name
+          flex: 0 0 100%
+          text-align: center
+        & .server
+          flex: 0 0 100%
+          text-align: center
+        & .count, & .cost
+          flex: 0 0 calc(50% - 6px)
+        & .all_cost
+          flex: 0 0 100%

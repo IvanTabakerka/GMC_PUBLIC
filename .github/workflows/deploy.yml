@@ -1,0 +1,43 @@
+name: Deploy
+run-name: ${{ github.actor }} auto deploing to goodminecraft.com
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install modules
+        run: npm install
+      - name: Build project
+        run: npm run build
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
+          script: |
+            cd /home/servers/227ddaf5-84df-48d2-ac25-02aedadb092f
+            git pull origin main
+            git status
+            npm install
+            npm run build
+            chmod 755 -R ../227ddaf5-84df-48d2-ac25-02aedadb092f
+            curl "https://control.goodminecraft.com/api/client/servers/227ddaf5/power" \
+              -H 'Accept: application/json' \
+              -H 'Content-Type: application/json' \
+              -H 'Authorization: Bearer ${{ secrets.PTEROQ_TOKEN }}' \
+              -X POST \
+              -d '{
+              "signal": "restart"
+            }'

@@ -1,0 +1,796 @@
+// Core
+h1, h2, h3, h4, h5, h6
+  font-size: 16px
+  text-transform: uppercase
+  font-weight: normal
+  margin: 12px 0
+h1, h2
+  font-size: 20px
+a
+  color: #fff
+  cursor: pointer
+a:hover
+  color: #abb0c2
+  text-decoration: none
+img
+  width: 100%
+  height: 100%
+  display: block
+hr
+  background: #FFF
+.bs
+  box-shadow: 0px 0px 6px 0px rgba(21, 21, 21, 0.3)
+.text_center
+  text-align: center
+.text_small
+  font-size: 12px
+  font-weight: 300
+.text_bold
+  font-weight: bold
+.pointer
+  cursor: pointer
+  text-decoration: none
+.gray_text
+  color: #abb0c2
+.up_text
+  text-transform: uppercase
+.url
+  text-decoration: underline
+.container-xl
+  max-width: 1663px
+  padding: 0
+  margin: 0
+.container-lg
+  max-width: 1500px
+.whitespace_nowrap
+  white-space: nowrap
+.small_text
+  font-size: 10px
+// Content
+body
+  font-family: "Rubik", "Arial", sans-serif
+  font-display: spaw
+  font-size: 15px
+  background: #33404d
+  color: #fff
+  width: 100%
+  height: 100vh
+  overflow: hidden
+.shell
+  display: grid
+  grid-template-columns: 240px auto
+.content
+  height: 100%
+  max-height: 100vh
+  overflow-y: auto
+  overflow-x: hidden
+  & .content_wrapper
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    & main
+      flex: 1 1 100%
+      width: 100%
+      margin: 0 auto
+.fullscreen
+  width: 100%
+  min-height: 80vh
+  display: grid
+  align-content: center
+  justify-content: center
+.content_padding
+  padding: 12px
+.icon
+  width: 26px
+  height: 26px
+  cursor: pointer
+@media screen and (max-width: 1000px)
+  .shell
+      grid-template-columns: auto
+// Animation state
+.fade-enter-active
+  animation: fadeInRight
+  animation-duration: 0.3s
+  animation-delay: 0.3s
+.fade-leave-active
+  animation: fadeOutRight
+  animation-duration: 0.3s
+.slide_up-enter,
+.slide_up-enter-active,
+.slide_up-enter-to
+  animation: fadeInDown
+  animation-duration: 0.4s
+.slide_up-leave,
+.slide_up-leave-active,
+.slide_up-leave-to
+  animation: fadeOutUp
+  animation-duration: 0.4s
+.slide_left-enter,
+.slide_left-enter-active,
+.slide_left-enter-to
+  animation: fadeInRight
+  animation-duration: 0.4s
+.slide_left-leave,
+.slide_left-leave-active,
+.slide_left-leave-to
+  animation: fadeOutLeft
+  animation-duration: 0.4s
+.modal-enter-active
+  animation: fadeIn
+  animation-duration: 0.4s
+  & .standart_modal
+    animation: fadeInUp
+    animation-duration: 0.4s
+.modal-leave-active
+  animation: fadeOut
+  animation-duration: 0.4s
+  & .standart_modal
+    animation: fadeOutDown
+    animation-duration: 0.4s
+// Ссылки
+.type_standart_wrapper
+  margin: 12px 0
+  display: flex
+  align-items: center
+  text-decoration: none
+.type_standart_icon
+  width: 20px
+  height: 20px
+  cursor: pointer
+.type_standart_icon img
+  width: 100%
+  height: 100%
+  object-fit: cover
+.type_standart
+  padding: 8px 12px
+  display: inline-block
+  color: #fff
+  text-transform: uppercase
+  box-shadow: 0px 0px 8px 0px rgba(21, 21, 21, 0.3)
+  background: #1f2933
+  transition-duration: 0.4s
+  font-size: 600
+  letter-spacing: 1px
+  text-decoration: none
+  cursor: pointer
+  border: none
+  &.active
+    border-left: 2px solid #fff
+    background: #181f27
+  & span
+    font-weight: 700
+.range_slider
+  margin: 18px 0 0 0
+  & .vue-range-slider.slider-component .slider
+    background: #fff
+  & .vue-range-slider.slider-component .slider-tooltip-wrap .slider-tooltip
+    color: #fff
+    background: #181f27
+    border-color: #181f27
+  & .vue-range-slider.slider-component .slider .slider-process
+    background: #181f27
+// Универсальный список элементов
+.standart_list_cols
+  display: grid
+  grid-template-columns: 1fr 4fr
+  grid-gap: 12px
+.standart_cat
+  display: grid
+  grid-gap: 12px
+  align-content: flex-start
+  font-size: 12px
+.standart_list
+  display: grid
+  grid-gap: 12px
+  align-content: flex-start
+  & .header
+    display: flex
+    align-items: center
+    background: #181f27
+    border-radius: 2px
+    padding: 8px
+    & h3
+      font-size: 18px
+      text-transform: uppercase
+      letter-spacing: 2px
+      white-space: nowrap
+      margin: 0 12px 0 0
+    & .control
+      flex: 1 1 100%
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      &>div
+        margin: 0 6px
+  img
+    width: 100%
+    height: auto
+  & .el
+    display: grid
+    grid-gap: 4px
+    & .el_string
+      display: flex
+      align-items: center
+      padding: 8px
+      background: #181f27
+      border-radius: 2px
+      grid-gap: 12px
+      & .control
+        display: grid
+        grid-auto-flow: column dense
+        justify-content: right
+        grid-gap: 8px
+        & a
+          display: block
+          width: 20px
+        & a.rotate
+          transform: rotate(180deg)
+    & .el_info
+      display: flex
+      flex-wrap: wrap
+      grid-gap: 6px
+      padding: 6px
+      background: #181f27
+      border-radius: 2px
+      & div
+        flex: 1 1 auto
+        background: #344a5f
+        padding: 2px
+        border-radius: 2px
+        padding: 8px
+        & span
+          text-transform: uppercase
+          letter-spacing: 1px
+          font-weight: bold
+  &.mods .el
+    & .el_string
+      & .name
+        flex: 0 0 300px
+      & .descript
+        flex: 1 1 100%
+        margin: 0 12px
+      & .control
+        flex: 0 0 20px
+  & .pagenav
+    display: flex
+    flex-wrap: wrap
+    grid-gap: 8px
+    & span
+      padding: 6px 8px
+      background: #181f27
+      cursor: pointer
+      border-radius: 2px
+      font-size: 16px
+@media screen and (max-width: 1200px)
+  .standart_list_cols
+    grid-template-columns: 1fr
+    align-content: flex-start
+@media screen and (max-width: 600px)
+  .standart_list
+    & .header
+      display: grid
+      grid-gap: 8px
+      & .control
+        width: 100%
+        &>div
+          margin: 0
+          width: 100%
+// Хлебные крошки
+.bread
+  display: flex
+  flex-wrap: wrap
+  margin: 0 0 12px 0
+  & li
+    list-style: none
+    margin: 0 8px 8px 0
+    padding: 4px
+    background: #1f2933
+    display: block
+    & a
+      text-decoration: none
+      display: block
+// Inputs
+.input_container
+  display: grid
+  grid-gap: 12px
+  padding: 12px
+  & .type_standart
+    width: 100%
+    text-align: center
+.input_row
+  width: 100%
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 12px
+  align-items: center
+  & label
+    font-size: 16px
+    text-transform: uppercase
+    letter-spacing: 1px
+  & input[type='text'], input[type='password'], textarea
+    background: #1f2933
+    border: 0px solid #fff
+    padding: 6px
+    font-size: 16px
+    color: #fff
+    font-family: "Rubik", "Arial", sans-serif
+  &.file
+    & input[type='file']
+      display: none
+    & .file_button
+      text-align: center
+      margin: 0
+    & div
+      display: grid
+      justify-content: center
+      & .file_prev_no
+        width: 120px
+        height: 120px
+        margin: 0 auto
+      & .file_prev
+        width: 120px
+        height: 120px
+        margin: 8px auto
+        border-radius: 50%
+        overflow: hidden
+        object-fit: cover
+.input_annot
+  font-size: 12px !important
+  margin: 6px 0 !important
+.input_annot.error
+  font-size: 14px !important
+  padding: 6px
+  background: rgba(0,0,0,0.4)
+// Checkbox
+.check_row
+  display: flex
+  grid-gap: 12px 0
+  flex-wrap: wrap
+  margin: 12px 0
+  h4
+    font-size: 16px
+    text-transform: uppercase
+    flex: 0 0 100%
+    margin: 12px 0 0 0
+  .check_el
+    flex: 0 0 50% !important
+.check_el
+  width: 100%
+  display: grid
+  grid-template-columns: 26px auto
+  grid-gap: 12px
+  align-items: center
+  grid-template-areas: 'check_el_label check_el_span'
+  & span
+    font-size: 16px
+    text-transform: uppercase
+    letter-spacing: 1px
+    grid-area: check_el_span
+  & label
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3)
+    background: #1f2933
+    padding: 6px
+    display: flex
+    height: 26px
+    grid-area: check_el_label
+    border-radius: 50%
+  & input[type=checkbox], & input[type=radio]
+    display: none
+  & input[type=checkbox]:checked + label:after, & input[type=radio]:checked + label:after
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    background: #abb0c2
+    content: ''
+@media screen and (max-width: 560px)
+  .type_standart
+    padding: 4px 6px
+    letter-spacing: 0
+  .input_row
+    grid-template-columns: 1fr
+// Icons
+.icon_medium
+  max-width: 18px
+  width: 100%
+  height: 18px
+  margin: 0 !important
+  display: inline-block
+  cursor: pointer
+// Universal button
+.type_standart
+  padding: 8px 12px
+  display: inline-block
+  color: #fff
+  text-transform: uppercase
+  box-shadow: 0px 0px 8px 0px rgba(21, 21, 21, 0.3)
+  background: #1f2933
+  transition-duration: 0.4s
+  font-size: 600
+  letter-spacing: 1px
+  text-decoration: none
+  cursor: pointer
+  border: none
+  &.stretch
+    width: 100%
+    text-align: center
+  &.active
+    border-left: 2px solid #fff
+    background: #181f27
+  & span
+    font-weight: 700
+// Universal close button
+.universal_close
+  width: 24px
+  height: 24px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: absolute
+  top: 12px
+  right: 12px
+  cursor: pointer
+  &:before,
+  &:after
+    content: ''
+    width: 100%
+    height: 2px
+    background: #ffffff
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(-45deg)
+    margin: -2px 0 0 0
+  &.absolute
+    position: absolute
+    top: 12px
+    right: 12px
+// Модальное окно
+.standart_modal_overlay
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  background: rgba(0,0,0,0.4)
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 200
+  backdrop-filter: blur(12px)
+  -webkit-backdrop-filter: blur(12px)
+  .standart_modal
+    max-width: 760px
+    min-height: 240px
+    width: 100%
+    background: #181f27
+    position: relative
+    & .content
+      display: grid
+      grid-gap: 12px
+      & h3
+        font-size: 21px
+        text-transform: uppercase
+        letter-spacing: 1px
+      & .buy
+        padding: 8px
+        background: #344a5f
+        display: grid
+        grid-gap: 12px
+        & h4
+          font-size: 16px
+          text-transform: uppercase
+        & p
+          font-size: 14px
+          & span
+            display: inline-block
+            padding: 6px
+            border-radius: 2px
+            background: #181f27
+            margin: 0 6px 6px 0
+            text-transform: uppercase
+          & span.sale
+            background: #fff
+            color: #181f27
+            font-weight: bold
+    & .close
+      width: 24px
+      height: 24px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      position: absolute
+      top: 12px
+      right: 12px
+      cursor: pointer
+      &:before,
+      &:after
+        content: ''
+        width: 100%
+        height: 2px
+        background: #ffffff
+        transform: rotate(45deg)
+      &:after
+        transform: rotate(-45deg)
+        margin: -2px 0 0 0
+// Модальное окно информации справа
+@keyframes modal_info_progress
+  from
+    width: 0
+  to
+    width: 100%
+.modal_info
+  position: fixed
+  max-width: 400px
+  width: 100%
+  background: rgba(0,0,0,0.65)
+  padding: 12px 44px 12px 12px
+  bottom: 12px
+  right: 12px
+  display: none
+  grid-gap: 12px
+  animation: bounceInUp
+  animation-duration: 0.4s
+  & .modal_info_progress
+    height: 2px
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+  & .modal_info_progress::after
+    content: ''
+    width: 100%
+    height: 2px
+    background: #fff
+    display: block
+  &.active
+    display: grid
+  &.active .modal_info_progress.animated::after
+    animation: modal_info_progress 10s 1 ease-in-out
+.modal_info_close
+  width: 20px
+  height: 20px
+  position: absolute
+  top: 12px
+  right: 12px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  cursor: pointer
+.modal_info_close::before,
+.modal_info_close::after
+  content: ''
+  width: 100%
+  height: 2px
+  background: #fff
+  display: block
+  transform: rotate(45deg)
+.modal_info_close::after
+  margin: -2px 0 0 0
+  transform: rotate(-45deg)
+// Toast
+.toasted-primary
+  background-color: #181f27 !important
+// Bootstrap custom
+// Breadcrumb
+.breadcrumb
+  background: #33404d
+  .breadcrumb-item.active
+    color: #abb0c2
+// Card
+.card
+  background: #181f27
+// Pagenav
+.page-link
+  color: #fff
+  background-color: #33404d
+  border: 1px solid #181f27
+.page-item.active .page-link
+  color: #fff
+  background-color: #181f27
+  border-color: #181f27
+.page-item.disabled .page-link
+  color: #fff
+  background-color: #33404d
+  border-color: #181f27
+.page-link:hover
+  color: #fff
+  background-color: #181f27
+  border-color: #181f27
+// Table
+.table
+  color: #abb0c2
+.table thead th
+  color: #FFFFFF
+  border-bottom: 0px solid #FFFFFF
+.table th, .table td
+  border-top: 0px solid #FFFFFF
+.table-striped thead tr,
+.table-striped tbody tr,
+.table .thead-dark th
+  background-color: #181f27
+  &:hover
+    color: #FFFFFF
+    background-color: #181f27
+.table-striped tbody tr:nth-of-type(2n+1)
+  background-color: #13171d
+.form-control
+  color: #FFFFFF
+  background-color: #181f27
+  border: 1px solid #13171d
+  &:focus
+    color: #FFFFFF
+    background-color: #181f27
+    border: 1px solid #181f27
+.table .thead-dark th
+  white-space: nowrap
+// List styles
+.list-group-item
+  background-color: #13171d
+  border: 1px solid #33404d
+// Card
+.card-body
+  padding: 12px
+  h4
+    margin-top: 0
+// Btn
+.btn
+  outline: none !important
+  box-shadow: none !important
+.btn-secondary
+  background-color: #13171d
+  border: 1px solid #33404d
+  outline: none
+  &:hover,
+  &:focus
+    box-shadow: none
+    background-color: #181f27
+    border: 1px solid #181f27
+  &.active
+    background-color: #33404d !important
+    border-color: #33404d !important
+// Modal
+.modal
+  backdrop-filter: blur(12px)
+  -webkit-backdrop-filter: blur(12px)
+.modal-content
+  background: #33404d
+  & .close
+    color: #FFFFFF
+    text-shadow: none
+    opacity: 1
+    font-weight: 300
+// Checkbox switch
+.custom-control-label
+  text-transform: uppercase
+  font-size: 12px !important
+  line-height: 100% !important
+  padding: 0.6rem 0 0 0
+  &::before
+    background-color: #181f27 !important
+    border: 1px solid #13171d !important
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after
+  background-color: #fff !important
+.custom-switch.b-custom-control-lg .custom-control-label
+  font-size: 16px !important
+// Spinbutton
+.btn .b-icon.bi,
+.nav-link .b-icon.bi,
+.dropdown-toggle .b-icon.bi,
+.dropdown-item .b-icon.bi,
+.input-group-text .b-icon.bi
+  color: #FFFFFF
+.form-control.focus
+  color: #FFFFFF
+  background-color: #181f27
+  border: 1px solid #13171d
+// Progress
+.progress
+  background-color: #344a5f
+  .progress-bar
+    background-color: #181f27
+// Tabs
+.nav-tabs
+  border-bottom: 1px solid #344a5f
+  .nav-link
+    padding: 3px 8px
+    border-radius: 2px
+    height: 26px
+    &:hover,
+    &.active
+      background-color: #344a5f
+      color: #ffffff
+      border-color: #344a5f
+// Grafs
+.standart_graf_wrapper
+  height: 100%
+  min-height: 382px
+  position: relative
+  .standart_graf_control
+    display: grid
+    grid-gap: 8px 16px
+    grid-template-columns: auto auto auto 1fr
+    align-content: center
+    align-items: center
+    margin: 0 0 8px 0
+    background: #181f27
+    padding: 8px
+    span
+      line-height: 100%
+      font-size: 12px
+      text-align: right
+  .standart_graf
+    canvas
+      max-height: 320px
+  .standart_graf_loader
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    backdrop-filter: blur(2px)
+    -webkit-backdrop-filter: blur(2px)
+@media screen and (max-width: 786px)
+  .standart_graf_wrapper
+    .standart_graf_control
+      grid-gap: 8px
+      grid-template-columns: 1fr 1fr
+// Input  File
+.custom-file-input
+  ~ .custom-file-label[data-browse]::after
+    background-color: #33404d
+    color: #FFFFFF
+.custom-file-label
+  background-color: #181f27
+  color: #FFFFFF
+  border: 1px solid #13171d
+// Select
+.custom-select
+  background-color: #181f27
+  color: #FFFFFF
+  border: 1px solid #13171d
+.custom-select:focus
+  background-color: #181f27
+  color: #FFFFFF
+  border: 1px solid #13171d
+.form-control:focus, .custom-select:focus
+  box-shadow: 0 0 3px 1px #13171d
+.custom-file-input:focus ~ .custom-file-label
+  border-color: #181f27
+  box-shadow: 0 0 3px 1px #13171d
+.gmc_descript_wrapper
+  position: relative
+  width: 100%
+  height: 100%
+  & .gmc_descript
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    height: calc(100vh - 92px)
+    background-color: rgba(0,0,0,0.6)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  & img
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    height: calc(100vh - 92px)
+    object-fit: cover
+.input-group-text
+  background-color: #33404d
+  color: #FFFFFF
+  border-radius: 0
+  border: 1px solid #33404d
+.popover
+  background-color: #33404d
+  .popover-body
+    color: #FFFFFF
+  .popover-header
+    background-color: #13171d
+    border-bottom: 1px solid #13171d

@@ -1,0 +1,40 @@
+// Admin navigate
+.navigate.admin
+  align-content: flex-start
+  overflow: auto
+  height: 100vh
+  .navigate_list
+    padding: 12px 0
+    grid-area: shell_nav
+    z-index: 100
+    & .category
+      & p
+        padding: 8px 12px
+        font-size: 14px
+        letter-spacing: 1px
+        text-transform: uppercase
+        background: #13171d
+        color: #797979
+      & .link
+        & a
+          font-size: 14px
+          padding: 8px 12px 8px 24px
+          display: block
+          color: #abb0c2
+          text-transform: uppercase
+          background: #181f27
+          &.nuxt-link-exact-active
+            color: #fff
+            padding: 8px 12px 8px 20px
+            border-left: 2px solid #fff
+            background: #181f27
+          &:hover
+            text-decoration: none
+.shop_image
+  width: 32px
+  height: 32px
+  object-fit: contain
+.shop_image_update
+  width: 128px
+  height: 128px
+  object-fit: contain

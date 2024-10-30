@@ -1,0 +1,249 @@
+// clear_main
+.clear_main
+  min-height: 100vh
+  padding: 12px
+// Sidebar
+.navigate
+  display: grid
+  grid-template-rows: repeat()
+  align-content: space-between
+  padding: 12px 0 12px 0
+  background: #13171d
+  z-index: 10
+  height: 100vh
+  & .logo
+    text-transform: uppercase
+    font-size: 16px
+    letter-spacing: 1px
+    font-weight: 300
+    color: #fff
+    text-decoration: none
+    margin: 0 20px
+    & span
+      font-weight: 400
+  & a
+    text-decoration: none
+  & nav
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    & .navigate_parent,
+    & .navigate_child
+        list-style: none
+        display: grid
+    .navigate_child
+        display: none
+        background: #181f27
+    .navigate_parent_item.nuxt-link-active+.navigate_child
+        display: grid
+        animation: bounceInLeft
+        animation-duration: 0.4s
+    .navigate_parent_item
+      padding: 8px 8px 8px 20px
+      font-size: 15px
+      letter-spacing: 1px
+      text-transform: uppercase
+      background: #13171d
+      color: #fff
+    & a
+      padding: 8px 8px 8px 28px
+      display: block
+      color: #abb0c2
+      text-transform: uppercase
+      font-weight: lighter
+    & a.nuxt-link-exact-active
+      padding: 8px 8px 8px 18px
+      color: #fff
+      border-left: 2px solid #fff
+      background: #15161c
+.navigate_soc
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 0 20px 12px 20px
+  & a
+    height: 20px
+    display: block
+    & img
+      width: auto
+  & a.discord
+    margin: 0 0 0 -3px
+  & a.vk
+    height: 24px
+.navigate_devel
+  text-transform: uppercase
+  display: flex
+  justify-content: space-between
+  font-weight: 300
+  margin: 0 20px
+  & .bold
+    font-weight: 400
+@media screen and (max-width: 1000px)
+  .navigate
+    display: none
+    position: fixed
+    width: 100%
+    animation-duration: 0.4s
+    &.active
+      display: grid
+    & .logo
+      font-size: 18px
+      margin: 0 32px
+      text-align: center
+// Topline
+.header_wrapper
+  width: 100%
+  background: #181f27
+header
+  display: grid
+  grid-template-columns: auto auto
+  justify-content: space-between
+  align-items: center
+  padding: 0 12px
+  min-height: 46px
+  margin: 0 auto
+  width: 100%
+  position: relative
+  & .menu_trigger
+    display: none
+    flex-direction: column
+    justify-content: space-around
+    width: 26px
+    height: 26px
+    z-index: 160
+    & span
+      width: 100%
+      height: 2px
+      background: #fff
+      transition-duration: 0.2s
+  & .menu_trigger.active
+    justify-content: center
+    & span:nth-child(1)
+      transform: rotate(45deg)
+    & span:nth-child(2)
+      display: none
+    & span:nth-child(3)
+      margin: -2px 0 0 0
+      transform: rotate(-45deg)
+  & .main_title
+    font-size: 16px
+    text-transform: uppercase
+    letter-spacing: 3px
+    font-weight: 400
+  & .hdr_control
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    grid-gap: 16px
+  & .hdr_control_profile
+    display: flex
+    align-items: center
+    grid-gap: 12px
+    text-decoration: none
+  & .hdr_modal_profile
+    position: absolute
+    right: 0
+    top: 0
+    background: #33404d
+    max-width: 320px
+    width: 100%
+    display: grid
+    grid-gap: 8px
+    padding: 12px
+    justify-items: center
+    z-index: 10
+    & .info
+      display: grid
+      grid-template-columns: 1fr 2fr
+      width: 100%
+      & span
+        font-weight: 400
+        display: flex
+        align-items: center
+      & span:nth-child(even)
+        font-weight: 300
+        text-align: right
+        justify-content: flex-end
+  & .hdr_avatar
+    max-width: 32px
+    width: 100%
+    height: 32px
+    object-fit: cover
+    border-radius: 50%
+    overflow: hidden
+    cursor: pointer
+  & .hdr_big_avatar
+    max-width: 128px
+    width: 100%
+    height: 128px
+    object-fit: cover
+    border-radius: 50%
+    overflow: hidden
+@media screen and (max-width: 1000px)
+  header
+    grid-template-columns: 26px auto 32px
+    & .menu_trigger
+      display: flex
+    & h2
+      font-size: 14px
+      letter-spacing: 1px
+      font-weight: 300
+@media screen and (max-width: 400px)
+  header
+    & .hdr_modal_profile
+      max-width: 100%
+// Footer
+.footer_wrapper
+  width: 100%
+  background: #13171d
+footer
+  display: grid
+  grid-template-columns: auto auto
+  grid-gap: 12px
+  justify-content: space-between
+  align-items: center
+  padding: 0 12px
+  min-height: 46px
+  width: 100%
+  margin: 0 auto
+  & .footer_discord
+    display: grid
+    grid-template-columns: auto 80px
+    grid-gap: 12px
+    font-size: 13px
+    letter-spacing: 1px
+    text-transform: uppercase
+    & p
+      padding: 3px 0 0 0
+  & .footer_copyright
+    text-align: right
+    font-weight: 300
+    & span
+      font-weight: 400
+    & .logo
+      text-transform: uppercase
+      font-size: 16px
+      letter-spacing: 1px
+      font-weight: 300
+      color: #fff
+      text-decoration: none
+@media screen and (max-width: 700px)
+  footer
+    grid-template-columns: auto
+    justify-items: center
+    justify-content: center
+    padding: 12px
+    & .footer_discord
+      width: 100%
+      grid-template-columns: 1fr
+      justify-items: center
+      justify-content: center
+      text-align: center
+      & a
+        max-width: 120px
+        width: 100%
+      & p
+        padding: 3px 0 0 0
+    & .footer_copyright
+      text-align: center
+// Informer
