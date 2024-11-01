@@ -1,4 +1,6 @@
-# public_nuxt_clear
+# GMC Public
+
+Nuxt 2
 
 ## Build Setup
 
