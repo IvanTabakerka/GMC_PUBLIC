@@ -138,5 +138,5 @@ export default {
 </script>
 
 <style lang="sass">
-  @import '@/assets/sass/servers.sass'
+  @use '@/assets/sass/servers.sass'
 </style>

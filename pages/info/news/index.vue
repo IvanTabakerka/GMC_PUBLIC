@@ -44,5 +44,5 @@
 </script>
 
 <style lang="sass">
-  @import '@/assets/sass/news.sass'
+  @use '@/assets/sass/news.sass'
 </style>

@@ -114,5 +114,5 @@
 </script>
 
 <style lang="sass">
-  @import '@/assets/sass/home.sass'
+  @use '@/assets/sass/home.sass'
 </style>

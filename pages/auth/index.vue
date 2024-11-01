@@ -57,5 +57,5 @@ export default {
 </script>
 
 <style lang="sass">
-  @import '@/assets/sass/user.sass'
+  @use '@/assets/sass/user.sass'
 </style>

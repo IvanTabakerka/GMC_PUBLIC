@@ -132,5 +132,5 @@
 </script>
 
 <style lang="sass">
-  @import '@/assets/sass/cabinet.sass'
+  @use '@/assets/sass/cabinet.sass'
 </style>

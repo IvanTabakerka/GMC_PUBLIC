@@ -6,12 +6,12 @@
         <b-col lg="2" md="12">
           <b-card no-body>
             <b-tabs small vertical v-model="tabIndex" nav-wrapper-class="w-100">
-              <b-tab 
+              <b-tab
                 title="Выбрать сервер"
                 v-on:click="setServer(0)"
                 :value="0"
               ></b-tab>
-              <b-tab 
+              <b-tab
                 v-for="server in $store.getters['servers/getActive']"
                 :key="server.id"
                 :title="`${server.name}-${server.postfix}`"
@@ -109,5 +109,5 @@
 </script>
 
 <style lang="sass">
-  @import '@/assets/sass/cabinet.sass'
+  @use '@/assets/sass/cabinet.sass'
 </style>
